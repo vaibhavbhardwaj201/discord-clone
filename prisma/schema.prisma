@@ -1,0 +1,19 @@
+// Install prisma by 
+// npm i -D prisma
+// and init prisma by
+// npx prisma init
+// Created Database on planetscale.com and followed the instructions
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Profile {
+  id String @id @default(uuid())
+}
